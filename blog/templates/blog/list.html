@@ -1,0 +1,14 @@
+{% extends 'draft\base.html' %}
+{% load crispy_forms_tags %}
+
+
+
+{% block content%}
+
+{% for name in object %}
+<p>{{name.name}}</p>
+<p>{{name.title}}</p>
+<p>{{name.content}}</p>
+
+{% endfor %}
+{% endblock %}
