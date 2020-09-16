@@ -122,7 +122,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
+MEDIA_ROOT= os.path.join(BASE_DIR, 'media') # will create a folder in BASE_DIR and put profile_pic inside and we will access that through the media url # the directory will be called media # will save files in file system root not in database
+MEDIA_URL='/media/' #public url for this directory where we access our media through the browser 
+# delete old pict in database and upload again the new folder will called media will be created in the BASE_DIR, and we can delete the old profile_pics
 CRISPY_TEMPLATE_PACK ='bootstrap4'
 LOGIN_REDIRECT_URL = 'blog-list'  # for login redirect nb: name side in the url if you logout in admin this login we create will log admin automatically
 LOGIN_URL ='login' #for profile account
