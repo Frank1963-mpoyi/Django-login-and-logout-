@@ -3,30 +3,43 @@
 
 
 {% block content%}
-
-
+<style>
+    .ml-2 {
+        font-size: 18px;
        
+    }
 
-        <div class="container">
-            <div class="row">
-                <div class="col-m4 col-sm-4 col-xs-12">
-                    <form method="POST">
-                        {% csrf_token %}
-                        
-                        <fieldset class = "form-group">
-                            <legend class = "border-botton mb-4"> Login </legend>
-                            {{form|crispy}}
-                        </fieldset>
-                        <div class ="form-group">
-                            <button class="btn btn-outline-info" type ="Submit"> Log in </button>
-                        </div>
-                    </form>
-                    <div class="border-top pt-3">
-                        <small class="text-muted">
-                            Need An Account ? <a class ="ml-2" href="{% url 'register' %}"> sign up now </a>
-                        </small>
+    small{
+        font-size: 18px;
+
+    }
+</style>
+     <div class="container">
+        <div class="row">
+            <div class="col-6 mx-auto">
+                <form method="POST" class="mt-5">
+                    {% csrf_token %}
+                    <fieldset class = "form-group">
+                        <legend class = "border-botton mb-4"> Login </legend>
+                        {{form|crispy}}
+                    </fieldset>
+                    <div class ="form-group">
+                        <button class="btn btn-outline-info" type ="Submit"> Log in </button>
                     </div>
+                </form>
+                <div class="border-top pt-3">
+                    <small class="text-muted">
+                        Need An Account ? <a class ="ml-1 btn btn-info text-decoration: none; " href="{% url 'register' %}"> sign up now </a>
+                    </small>
                 </div>
+
             </div>
         </div>
+     </div>
+
+
     {% endblock %}
+
+
+
+
